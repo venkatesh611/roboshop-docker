@@ -16,7 +16,7 @@ services:
  rabbitmq:
   image: rabbitmq:v1
   container_name: rabbitmq
-  envirinment:
+  environment:
    RABBITMQ_DEFAULT_USER: roboshop
    RABBITMQ_DEFAULT_PASS: roboshop123
  user:
@@ -34,7 +34,7 @@ services:
  shipping:
   image: shipping:v1
   container_name: shiping
-  depends-on:
+  depends_on:
   - mysql
   - cart
  payment:
