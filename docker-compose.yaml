@@ -8,7 +8,7 @@ services:
 
   catalogue:
     build: ./catalogue
-    image: venaktesh123321/catalogue:v1
+    image: venkatesh123321/catalogue:v1
     container_name: catalogue
     depends_on:
       - mongodb
@@ -21,14 +21,14 @@ services:
 
   mysql:
     build: ./mysql
-    image: venaktesh123321/mysql:v1
+    image: venkatesh123321/mysql:v1
     container_name: mysql
     volumes:
     - mysql:/var/lib/mysql
 
   rabbitmq:
     build: ./rabbitmq
-    image: venaktesh123321/rabbitmq:3
+    image: venkatesh123321/rabbitmq:3
     container_name: rabbitmq
     volumes: # -v rabbitmq:/var/lib/rabbitmq
     - rabbitmq:/var/lib/rabbitmq
@@ -38,7 +38,7 @@ services:
 
   user:
     build: ./user
-    image: venaktesh123321/user:v1
+    image: venkatesh123321/user:v1
     container_name: user
     depends_on:
       - mongodb
@@ -46,7 +46,7 @@ services:
 
   cart:
     build: ./cart
-    image: venaktesh123321/cart:v1
+    image: venkatesh123321/cart:v1
     container_name: cart
     depends_on:
       - redis
@@ -54,7 +54,7 @@ services:
 
   shipping:
     build: ./shipping
-    image: venaktesh123321/shipping:v1
+    image: venkatesh123321/shipping:v1
     container_name: shipping
     depends_on:
       - mysql
@@ -62,7 +62,7 @@ services:
 
   payment:
     build: ./payment
-    image: venaktesh123321/payment:v1
+    image: venkatesh123321/payment:v1
     container_name: payment
     depends_on:
       - rabbitmq
@@ -71,7 +71,7 @@ services:
 
   frontend:
     build: ./frontend
-    image: venaktesh123321/frontend:v1
+    image: venkatesh123321/frontend:v1
     container_name: frontend
     ports:
       - "80:80"
